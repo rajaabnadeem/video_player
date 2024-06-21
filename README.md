@@ -1,70 +1,155 @@
-# Getting Started with Create React App
+# Video Sharing Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a video sharing platform where users can upload, view, edit, and comment on videos. The frontend is built using React, and it includes various components such as a navigation bar, video list, modals for creating and editing videos, and a comment section. This README file explains the setup, development process, and key features of the application. 
 
-## Available Scripts
+Please log in with the username "mohammed_nadeem" to be able to view all features in the best way possible.
 
-In the project directory, you can run:
+## Table of Contents
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Component Details](#component-details)
+  - [NavBar](#navbar)
+  - [VideoList](#videolist)
+  - [CreateModal](#createmodal)
+  - [EditModal](#editmodal)
+  - [CommentSection](#commentsection)
+  - [Login](#login)
+- [Styling](#styling)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Features
+- User login and logout.
+- Video upload and edit functionalities.
+- Responsive video list with a carousel view.
+- Modal components for creating and editing videos.
+- Full playback functionality for videos, with all controls
+- Comment section with persistent fake and real comments.
+- Dark theme styling for the user interface.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
+To run this project locally, follow these steps:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/rajaabnadeem/video_player.git
+    cd video-sharing-platform
+    ```
 
-### `npm test`
+2. **Install dependencies**:
+    ```bash
+    npm install
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. **Run the development server**:
+    ```bash
+    npm start
+    ```
 
-### `npm run build`
+4. **Build the project**:
+    ```bash
+    npm run build
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usage
+1. **Login/Register**: Users can log in with their credentials. If they are using the platform for the first time, they can simply enter their desired username to sign up. Unforunately, this application is currently only handling login on the client-side, due to limitations with the API endpoints available as well as database. This will be refactored in the future to handle proper login and signup authentication with usernames and passwords, as currently we are only logging in with any username.
+2. **Upload Videos**: Users can upload new videos using the "Add your video" button.
+3. **Edit Videos**: Users can edit their videos by clicking the "Edit" button next to the video title.
+4. **View Videos**: Videos are displayed in a carousel, and users can play them directly.
+5. **Comment on Videos**: Users can add comments to videos, which are displayed in the comment section.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Component Details
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### NavBar
+The `NavBar` component includes the site navigation with the user's name and a logo centered in the middle.
 
-### `npm run eject`
+- **CSS file**: `styles/css/NavBar.css`
+- **Key points**:
+  - Centered logo
+  - User name aligned to the right
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### VideoList
+The `VideoList` component displays a list of videos in a responsive carousel. It includes functionalities for adding and editing videos.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **CSS file**: `styles/css/VideoList.css`
+- **Key points**:
+  - Responsive carousel for video display
+  - Edit button inline with video titles
+  - Integrated `CreateModal`, `EditModal`, and `CommentSection`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### CreateModal
+The `CreateModal` component provides a form for users to add new videos.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **CSS file**: `styles/css/Modal.css`
+- **Key points**:
+  - Allows user to enter a new video title, URL, and description. Upon clicking "Add Video", this will be added to their current video library with all the requisite information provided.
+  - Dark-themed modal
+  - Full-screen modal on open
 
-## Learn More
+### EditModal
+The `EditModal` component allows users to edit existing videos.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **CSS file**: `styles/css/Modal.css`
+- **Key points**:
+  - Allows user to edit their video title and description. Upon clicking the "Edit Video" button, the new title and description will be displayed
+  - Dark-themed modal
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### CommentSection
+The `CommentSection` component displays and allows adding comments on videos. It handles both fake and real comments, ensuring persistence across reloads.
 
-### Code Splitting
+- **CSS file**: `styles/css/CommentSection.css`
+- **Key points**:
+  - Utilizes the @faker-js package to generate fake comments if none exist
+  - Combines fake and real comments
+  - Persistent storage of comments using local storage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Login
+The `Login` component allows users to log in or register. It handles user authentication and integrates with the AuthContext for managing user sessions.
 
-### Analyzing the Bundle Size
+- **CSS file**: `styles/css/Login.css`
+- **Key points**:
+  - Dark-themed login form
+  - White input fields and orange submit button
+  - Error handling and validation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Styling
+The application follows a dark theme with consistent styling across all components. Key CSS files are located in the `styles/css` directory.
 
-### Making a Progressive Web App
+- **NavBar**: `styles/css/NavBar.css`
+- **VideoList**: `styles/css/VideoList.css`
+- **Modal (Create and Edit)**: `styles/css/Modal.css`
+- **CommentSection**: `styles/css/CommentSection.css`
+- **Login**: `styles/css/Login.css`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Screenshots
+Add screenshots of the application here to visually represent each component and feature.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. **NavBar & VideoList**:
+   ![NavBar](src/styles/screenshots/videoListSS.png)
 
-### Deployment
+2. **CreateModal**:
+   ![CreateModal](src/styles/screenshots/createModalSS.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+3. **EditModal**:
+   ![EditModal](src/styles/screenshots/editModalSS.png)
 
-### `npm run build` fails to minify
+4. **CommentSection**:
+   ![CommentSection](src/styles/screenshots/commentSectionSS.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4. **Login**:
+   ![Login](src/styles/screenshots/loginSS.png)
+
+4. **Logout**:
+   ![Logout](src/styles/screenshots/logoutSS.png)
+
+## Contributing
+Contributions are welcome! Please fork the repository and create a pull request with your changes. Ensure your code follows the existing code style and includes appropriate tests.
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature-branch-name`.
+3. Make your changes and commit them: `git commit -m 'Add new feature'`.
+4. Push to the branch: `git push origin feature-branch-name`.
+5. Submit a pull request.
