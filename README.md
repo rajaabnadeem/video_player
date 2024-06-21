@@ -18,7 +18,6 @@ Please log in with the username "mohammed_nadeem" to be able to view all feature
 - [Styling](#styling)
 - [Screenshots](#screenshots)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 - User login and logout.
@@ -46,11 +45,6 @@ To run this project locally, follow these steps:
 3. **Run the development server**:
     ```bash
     npm start
-    ```
-
-4. **Build the project**:
-    ```bash
-    npm run build
     ```
 
 ## Usage
