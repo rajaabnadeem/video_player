@@ -2,7 +2,7 @@
 
 This project is a video sharing platform where users can upload, view, edit, and comment on videos. The frontend is built using React, and it includes various components such as a navigation bar, video list, modals for creating and editing videos, and a comment section. This README file explains the setup, development process, and key features of the application. 
 
-Please log in with the username "mohammed_nadeem" to be able to view all features in the best way possible.
+In order to see the full functionality of the application, please login with a new user, and add 4-6 videos to be able to see all the features implemented and the actual design layout. Thank you!
 
 ## Table of Contents
 - [Features](#features)
@@ -147,3 +147,8 @@ Contributions are welcome! Please fork the repository and create a pull request 
 3. Make your changes and commit them: `git commit -m 'Add new feature'`.
 4. Push to the branch: `git push origin feature-branch-name`.
 5. Submit a pull request.
+
+
+## Video Walkthrough
+Here's a Loom link to a video walkthrough/demo of the application
+https://www.loom.com/share/c3c1129113274883b77f598e478a6485
